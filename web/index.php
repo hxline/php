@@ -1,13 +1,28 @@
 <?php
-    $a[0]['nama'] = "Handoyo";
-    $a[0]['kelas'] = "VII B";
-    $a[1]['nama'] = "Hxline";
-    $a[1]['kelas'] = "VIII B";
-    
-    $b[0]['nama'] = "Bag";
-    $b[0]['kelas'] = "VII B";
-    $b[1]['nama'] = "Asara";
-    $b[1]['kelas'] = "VIII B";
+    function generateRandomString($length = 10) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+    }
+
+    function generateRandomInt($length = 2) {
+        $characters = '123456789';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+    }
+
+    for ($i=0; $i < 10; $i++) {
+        $a[$i]['string'] = generateRandomString();
+        $a[$i]['int'] = generateRandomInt();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -22,22 +37,13 @@
 <body>
     <table border="1">
         <tr>
-            <td width="10px">No</td>
-            <td width="30px">Nama</td>
-            <td width="40px">OPTION</td>
+            <th width="50px">DATA</th>
+            <th width="100px">Set Session</th>
         </tr>
         <tr>
-            <td width="10px">1</td>
-            <td width="30px">Handoyo</td>
-            <td width="40px">
+            <td width="50px">Handoyo</td>
+            <td width="60px">
                 <button onclick="setSession('<?php echo htmlentities(serialize($a))?>');">Action</button>
-            </td>
-        </tr>
-        <tr>
-            <td width="10px">2</td>
-            <td width="30px">Xaaw</td>
-            <td width="40px">
-                <button onclick="setSession('<?php echo htmlentities(serialize($b))?>');">Action</button>
             </td>
         </tr>
     </table>
