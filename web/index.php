@@ -35,7 +35,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-<p>Tesd</p>
+<p>TesdOK</p>
     <table border="1">
         <tr>
             <th width="50px">DATA</th>
